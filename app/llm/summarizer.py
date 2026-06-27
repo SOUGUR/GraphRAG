@@ -1,7 +1,7 @@
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from app.config.settings import GOOGLE_API_KEY, LLM_MODEL
+from app.config.settings import GROQ_API_KEY, LLM_MODEL
 
 SUMMARIZE_PROMPT = ChatPromptTemplate.from_messages([
     ("system", "You are a code summarizer. Provide a brief, technical summary."),
@@ -9,13 +9,12 @@ SUMMARIZE_PROMPT = ChatPromptTemplate.from_messages([
 ])
 
 def summarize_code(code: str) -> str:
-    """Generate a brief summary of code."""
     if not code or len(code) < 50:
         return code
     
-    llm = ChatGoogleGenerativeAI(
+    llm = ChatGroq(
         model=LLM_MODEL,
-        google_api_key=GOOGLE_API_KEY,
+        groq_api_key=GROQ_API_KEY,
         temperature=0.2,
         max_tokens=200,
     )
