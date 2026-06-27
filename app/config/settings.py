@@ -26,8 +26,16 @@ NEO4J_PASSWORD = "password"
 
 # ---Gemini ---
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-EMBEDDING_MODEL = "gemini-embedding-001"
-LLM_MODEL = "gemini-2.0-flash"
+
+# EMBEDDING_MODEL = "gemini-embedding-001"
+# LLM_MODEL = "gemini-2.0-flash"
+
+LLM_MODEL = "llama-3.3-70b-versatile"  
+EMBEDDING_MODEL = "embed-english-v3.0" # Cohere model
+
+
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+COHERE_API_KEY = os.getenv("COHERE_API_KEY")
 
 # --- ChromaDB ---
 CHROMA_DIR = BASE_DIR / "chroma_db"
