@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Env files
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+#folders
+uploads
